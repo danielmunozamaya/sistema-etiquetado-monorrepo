@@ -1,0 +1,9 @@
+.modal-cerrar-sesion-body {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.modal-cerrar-sesion-body p {
+  margin: 16px 0;
+  margin-left: 16px;
+}

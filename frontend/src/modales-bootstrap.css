@@ -1,0 +1,90 @@
+/* Filtros y modal de eliminación */
+.modal-bootstrap-dialog {
+  max-width: 450px !important;
+}
+
+.modal-bootstrap-content {
+  max-height: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-bootstrap-body {
+  padding: 0 35px;
+  overflow-y: auto;
+}
+
+.modal-bootstrap-body p {
+  margin: 30px 0 !important;
+}
+
+.modal-bootstrap-footer {
+  padding: 1rem 1rem;
+  border-top: 1px solid #dee2e6;
+  justify-content: space-between;
+  display: flex;
+}
+
+.modal-bootstrap-form label {
+  text-align: left;
+  width: 100%;
+}
+
+.modal-bootstrap-form input {
+  text-align: left !important;
+}
+
+.modal-bootstrap-form .form-group {
+  padding: 14px 0;
+  width: 100%;
+}
+
+.modal-bootstrap-form .form-group-doble {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.modal-bootstrap-form .form-group:first-child {
+  padding-top: 32px;
+}
+
+.modal-bootstrap-form .form-group:last-child {
+  padding-bottom: 37px;
+}
+
+/* Columnas */
+.modal-bootstrap-columnas {
+  max-width: 450px !important;
+}
+
+.modal-bootstrap-columnas .modal-content {
+  max-height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-bootstrap-columnas .modal-body {
+  padding: 24px 35px;
+  overflow-y: auto;
+}
+
+.modal-bootstrap-checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px 20px;
+}
+
+.modal-bootstrap-checkbox-grid label {
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 6px;
+  width: 100% !important;
+}
+
+.modal-bootstrap-checkbox-grid label:hover {
+  /* background-color: #f8f9fa; */
+  cursor: pointer;
+}

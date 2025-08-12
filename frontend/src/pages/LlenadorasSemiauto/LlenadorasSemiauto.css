@@ -1,0 +1,24 @@
+/* .etqman-wrapper {
+  width: 1296px;
+  margin: 0 auto;
+  padding: 8px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  max-height: 91vh;
+  padding-bottom: 40px;
+}
+
+.etqman-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.etqman-grid-cell {
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border-radius: 4px;
+} */

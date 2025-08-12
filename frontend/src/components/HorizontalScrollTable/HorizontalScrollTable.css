@@ -1,0 +1,35 @@
+.tabla-scroll {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  padding: 2px;
+  background-color: white;
+  /* margin-top: 1rem; */
+}
+
+.table {
+  table-layout: auto !important;
+  width: auto; /* permite que la tabla crezca en anchura si lo necesita */
+}
+
+.table th,
+.table td {
+  white-space: nowrap;
+  /* padding-left: 15px !important;
+  padding-right: 15px !important; */
+  padding: 4px 15px !important;
+}
+
+.table th {
+  font-size: 15px;
+  font-weight: 500;
+  cursor: auto;
+  width: auto;
+}
+
+.table tr {
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+}

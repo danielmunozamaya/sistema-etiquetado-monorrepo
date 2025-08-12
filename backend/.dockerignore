@@ -1,0 +1,29 @@
+# Node modules y lockfiles (el container hace su propia instalación)
+node_modules
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+package-lock.json
+pnpm-lock.yaml
+
+# Archivos de entorno (tú los copias de forma controlada con entrypoint)
+.env.dev
+.env.prod
+
+# Carpetas temporales / caché
+dist
+coverage
+.cache
+.mssql
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log
+
+# Varios
+.idea
+.vscode

@@ -1,0 +1,33 @@
+.desktop-only-guard-root {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f4f4f4;
+  padding: 2rem;
+  text-align: center;
+}
+
+.desktop-only-guard-title {
+  font-size: 2.4rem;
+  margin-bottom: 60px;
+  font-weight: 600;
+}
+
+.desktop-only-guard-img {
+  max-width: 100%;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+}
+
+.desktop-only-guard-msg {
+  font-size: 1.3rem;
+  color: #555;
+  max-width: 450px;
+  margin: 0 auto;
+}

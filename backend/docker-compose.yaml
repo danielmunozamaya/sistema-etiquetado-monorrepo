@@ -1,0 +1,46 @@
+services:
+  db_primary:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: db_primary
+    restart: always
+    ports:
+      - '1433:1433'
+    environment:
+      SA_PASSWORD: ${DB_PASSWORD}
+      ACCEPT_EULA: 'Y'
+    volumes:
+      - ./mssql:/var/opt/mssql/data
+
+  db_remote:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: db_remote
+    restart: always
+    ports:
+      - '1434:1433' # expuesto como 1434 en el host
+    environment:
+      SA_PASSWORD: ${REMOTE_DB_PASSWORD}
+      ACCEPT_EULA: 'Y'
+    volumes:
+      - ./mssql_remote:/var/opt/mssql/data
+
+  backend_remote:
+    build:
+      context: .
+      dockerfile: Dockerfile.remote
+    container_name: backend_remote
+    restart: always
+    ports:
+      - '3001:3000'
+    depends_on:
+      - db_primary
+      - db_remote
+    working_dir: /app
+    entrypoint:
+      [
+        'sh',
+        '-c',
+        'cp .env.remote .env.dev && echo "✅ ENV copied" && yarn install && echo "✅ yarn install done" && yarn start:dev',
+      ]
+    environment:
+      - NODE_ENV=development
+      - ENVIRONMENT=dev

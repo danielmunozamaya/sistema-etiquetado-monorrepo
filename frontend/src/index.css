@@ -1,0 +1,55 @@
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  padding-bottom: 30px;
+}
+
+/* Este código de debajo es para las opciones de los enlaces de Dropdown del Offcanvas, para que no salga el azul feo de Bootstrap */
+.dropdown-item:focus,
+.dropdown-item:active,
+.dropdown-item:focus-visible,
+.dropdown-item.show,
+.dropdown-item:target {
+  background-color: #ff784f !important;
+  color: white !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.dropdown-menu {
+  --bs-dropdown-link-active-bg: #ff784f !important;
+}
+
+.bg-color-success {
+  background-color: #b6f6c3;
+}
+
+.bg-color-danger {
+  /* background-color: #feb6b5; */
+  background-color: #f8f9fa;
+}
+
+.bg-color-gray {
+  background-color: #c9cbcf;
+}
+
+.btn-light-gray {
+  background-color: #d6d8db;
+  /* color: #212529; */
+  /* border: 1px solid #ced4da; */
+}
+
+.btn-light-gray:hover {
+  background-color: #c9cbcf;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.form-check-input:hover {
+  cursor: pointer;
+}

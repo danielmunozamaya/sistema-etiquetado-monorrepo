@@ -1,0 +1,26 @@
+export type BartenderBody = {
+  TIPO_ETIQUETA: string;
+  ID_LLENADORA: string;
+  ID_CABEZAL: string;
+  NO_BIDON: string;
+  NO_MATRICULA: string;
+  NO_LOTE: string;
+  SSCC: string;
+  PRODUCTO: string;
+  FAMILIA_PRODUCTO: string;
+  CODIGO_EAN: string;
+  FECHA_PRODUCCION: string;
+  HORA_PRODUCCIION: string;
+  FECHA_CADUCIDAD: string;
+  FECHA_CADUCIDAD_NO_BARS: string;
+  CODE: string;
+  PESO_NETO_REAL: string;
+  PESO_NETO_ETIQUETA: string;
+  PESO_BRUTO_ETIQUETA: string;
+  TITULO_1: string;
+  VALOR_1: string;
+  TITULO_2: string;
+  VALOR_2: string;
+  RUTA_IMPRESION: string;
+  RUTA_ETIQUETA: string;
+};

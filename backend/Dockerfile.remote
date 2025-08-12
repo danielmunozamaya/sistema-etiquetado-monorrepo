@@ -1,0 +1,13 @@
+FROM node:22.16
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN yarn install
+
+COPY . .
+
+# Sobrescribimos el .env.dev **dentro del contenedor**, sin afectar al host
+RUN cp .env.remote .env.dev
+
+EXPOSE 3000

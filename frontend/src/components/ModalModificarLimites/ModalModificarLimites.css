@@ -1,0 +1,14 @@
+.modal-limites {
+  max-width: 420px !important; /* ajusta a contenido tipo formulario */
+  /* padding: 0 20px; */
+}
+
+.modal-limites-filtros-form-columna {
+  /* background-color: #f8f9fa; */
+  border-radius: 8px;
+  padding: 10px 20px;
+}
+
+.modal-limites-form-group {
+  padding-bottom: 15px;
+}

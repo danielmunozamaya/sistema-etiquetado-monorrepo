@@ -1,0 +1,2406 @@
+{
+	"info": {
+		"_postman_id": "b6c49345-a49f-4fa7-bef8-58cb297256fd",
+		"name": "Etiquetado",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37613745"
+	},
+	"item": [
+		{
+			"name": "Llenadoras",
+			"item": [
+				{
+					"name": "V2",
+					"item": [
+						{
+							"name": "Query Llenadoras V2",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/llenadoras/v2/query?limit=15&offset=0&paginated_response=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"llenadoras",
+										"v2",
+										"query"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "15"
+										},
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "paginated_response",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Create llenadora",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_llenadora\": \"AA\",\r\n    \"nombre_llenadora\": \"Manzini\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/llenadoras",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"llenadoras"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create All llenadora",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_llenadora\": \"25\",\r\n    \"nombre_llenadora\": \"Manzini5\",\r\n    \"cabezales\": [\r\n        {\r\n            \"id_llenadora\": \"25\",\r\n            \"id_cabezal\": \"A\",\r\n            \"nombre_cabezal\": \"Anuel AA5\",\r\n            \"ruta_impresion\": \"192.168.5.50\"\r\n        },\r\n        {\r\n            \"id_llenadora\": \"25\",\r\n            \"id_cabezal\": \"B\",\r\n            \"nombre_cabezal\": \"Anuel BB5\",\r\n            \"ruta_impresion\": \"192.168.5.51\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/llenadoras/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"llenadoras",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all llenadoras",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/llenadoras?limit=15&offset=0&paginated_response=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"llenadoras"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "15"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "paginated_response",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all slim llenadoras",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/llenadoras/slim",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"llenadoras",
+								"slim"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one llenadora",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/llenadoras/02",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"llenadoras",
+								"02"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update llenadora",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre_llenadora\": \"Manzini\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/llenadoras/0330433e-f36b-1410-8ce0-00af0c2de9b7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"llenadoras",
+								"0330433e-f36b-1410-8ce0-00af0c2de9b7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete llenadora",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/llenadoras/AC2D433E-F36B-1410-8CE0-00AF0C2DE9B7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"llenadoras",
+								"AC2D433E-F36B-1410-8CE0-00AF0C2DE9B7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cabezales",
+			"item": [
+				{
+					"name": "V2",
+					"item": [
+						{
+							"name": "Query Cabezales V2",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/cabezales/v2/query?limit=15&offset=0&paginated_response=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"cabezales",
+										"v2",
+										"query"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "15"
+										},
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "paginated_response",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Create cabezal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_llenadora\": \"AA\",\r\n    \"id_cabezal\": \"B\",\r\n    \"nombre_cabezal\": \"Cabezal_B\",\r\n    \"ruta_impresion\": \"192.168.1.156\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/cabezales",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cabezales"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all cabezales",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/cabezales",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cabezales"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one cabezal",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/cabezales/FE32433E-F36B-1410-8D3D-005A248EF168",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cabezales",
+								"FE32433E-F36B-1410-8D3D-005A248EF168"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update cabezal",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre_cabezal\": \"Cabezalazo\",\r\n    \"ruta_impresion\": \"192.168.1.154\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/cabezales/FE32433E-F36B-1410-8D3D-005A248EF168",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cabezales",
+								"FE32433E-F36B-1410-8D3D-005A248EF168"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query Cabezales",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_llenadora\": \"03\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/cabezales/query?limit=2&offset=0&paginated_response=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cabezales",
+								"query"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "2"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "paginated_response",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Productos",
+			"item": [
+				{
+					"name": "V2",
+					"item": [
+						{
+							"name": "Query Productos V2",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"where\": {\r\n    \"id_producto\": { \"like\": \"1\" },\r\n    \"familia_producto\": { \"like\": \"toma\" },\r\n    \"nombre_producto\": { \"like\": \"vor\" }\r\n    // \"eans.dias_best_before\": { \"gt\": 200 }\r\n    // \"edad\": { \"gte\": 18, \"lte\": 30 },\r\n    // \"activo\": { \"eq\": true }\r\n  }\r\n//   \"order\": { \"nombre_producto\": \"ASC\" },\r\n//   \"select\": [\"id\", \"nombre_producto\", \"eans.id\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/productos/v2/query?limit=15&offset=0&paginated_response=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"productos",
+										"v2",
+										"query"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "15"
+										},
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "paginated_response",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Create producto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_producto\": \"APIS\",\r\n    \"nombre_producto\": \"Tomate frito Apis\",\r\n    \"familia_producto\": \"TOMATEFRITO\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gel all productos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/productos?limit=5&offset=1&paginated_response=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "offset",
+									"value": "1"
+								},
+								{
+									"key": "paginated_response",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one producto",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/productos/0033433E-F36B-1410-8D3D-005A248EF168",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos",
+								"0033433E-F36B-1410-8D3D-005A248EF168"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update produto",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre_producto\": \"Tomatazo\",\r\n    \"familia_producto\": \"de los cortés\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/productos/0633433E-F36B-1410-8D3D-005A248EF168",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos",
+								"0633433E-F36B-1410-8D3D-005A248EF168"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete producto",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/productos/0633433E-F36B-1410-8D3D-005A248EF168",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos",
+								"0633433E-F36B-1410-8D3D-005A248EF168"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Familias",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/productos/familias",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos",
+								"familias"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "offset",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "paginated_response",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get by Familia",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/productos/familia/TOMATEFRITO",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos",
+								"familia",
+								"TOMATEFRITO"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query Productos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_producto\": \"TOM1\",\r\n    \"nombre_producto\": \"Tomate Variante 1\",\r\n    \"familia_producto\": \"Tomate\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/productos/query?limit=2&offset=0&paginated_response=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"productos",
+								"query"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "2"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "paginated_response",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Presentaciones",
+			"item": [
+				{
+					"name": "V2",
+					"item": [
+						{
+							"name": "Query Presentaciones V2",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/presentaciones/v2/query?limit=15&offset=0&paginated_response=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"presentaciones",
+										"v2",
+										"query"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "15"
+										},
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "paginated_response",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Create presentacion",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_presentacion\": \"PP\",\r\n    \"nombre_presentacion\": \"Pack de 4 bidones\",\r\n    \"peso_neto\": 230,\r\n    \"peso_bruto\": 240\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/presentaciones",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"presentaciones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all presentaciones",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/presentaciones",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"presentaciones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one presentacion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/presentaciones/0933433E-F36B-1410-8D3D-005A248EF168",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"presentaciones",
+								"0933433E-F36B-1410-8D3D-005A248EF168"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update presentacion",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre_presentacion\": \"Palet de 4 bidones\",\r\n    \"peso_bruto\": 241,\r\n    \"peso_neto\": 236\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/presentaciones/0933433E-F36B-1410-8D3D-005A248EF168",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"presentaciones",
+								"0933433E-F36B-1410-8D3D-005A248EF168"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete presentacion",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/presentaciones/0933433E-F36B-1410-8D3D-005A248EF168",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"presentaciones",
+								"0933433E-F36B-1410-8D3D-005A248EF168"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query Presentación",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_presentacion\": \"PRES1\",\r\n    \"nombre_presentacion\": \"Palet 1 - 4 bidones de 200kg\",\r\n    \"peso_neto\": 800,\r\n    \"peso_bruto\": 850\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/presentaciones/query?limit=2&offset=0&paginated_response=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"presentaciones",
+								"query"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "2"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "paginated_response",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ean's",
+			"item": [
+				{
+					"name": "V2",
+					"item": [
+						{
+							"name": "Query Eans V2",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/ean/v2/query?limit=15&offset=0&paginated_response=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"ean",
+										"v2",
+										"query"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "15"
+										},
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "paginated_response",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Create Ean",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"codigo_ean\": \"06 25698745\",\r\n    \"id_producto\": \"APIS\",\r\n    \"id_presentacion\": \"PP\",\r\n    \"dias_best_before\": 200\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/ean",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"ean"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Eans",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/ean",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"ean"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one Ean",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/ean/0A33433E-F36B-1410-8D3D-005A248EF168",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"ean",
+								"0A33433E-F36B-1410-8D3D-005A248EF168"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Ean",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dias_best_before\": 250\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/ean/0A33433E-F36B-1410-8D3D-005A248EF168",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"ean",
+								"0A33433E-F36B-1410-8D3D-005A248EF168"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Ean",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/ean/0A33433E-F36B-1410-8D3D-005A248EF168",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"ean",
+								"0A33433E-F36B-1410-8D3D-005A248EF168"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query Eans",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_producto\": \"\",\r\n    \"id_presentacion\": \"\",\r\n    \"codigo_ean\": \"842000001001\",\r\n    \"dias_best_before\": 365\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/ean/query?limit=15&offset=0&paginated_response=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"ean",
+								"query"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "15"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "paginated_response",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Motivo Bajas",
+			"item": [
+				{
+					"name": "Create MotivoBaja",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"codigo_baja\": \"BA1\",\r\n    \"nombre_baja\": \"Baja por envase defectuoso\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/motivo-bajas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"motivo-bajas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all MotivoBaja",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/motivo-bajas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"motivo-bajas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one MotivoBaja",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/motivo-bajas/0B33433E-F36B-1410-8D3D-005A248EF168",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"motivo-bajas",
+								"0B33433E-F36B-1410-8D3D-005A248EF168"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update MotivoBaja",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"descripcion_baja\": \"Sí porque blablabla\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/motivo-bajas/0B33433E-F36B-1410-8D3D-005A248EF168",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"motivo-bajas",
+								"0B33433E-F36B-1410-8D3D-005A248EF168"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete MotivoBaja",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/motivo-bajas/0B33433E-F36B-1410-8D3D-005A248EF168",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"motivo-bajas",
+								"0B33433E-F36B-1410-8D3D-005A248EF168"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Asociación Producción",
+			"item": [
+				{
+					"name": "V2",
+					"item": [
+						{
+							"name": "Query AsociacionProduccion V2",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/asociacion-produccion/v2/query?limit=15&offset=0&paginated_response=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"asociacion-produccion",
+										"v2",
+										"query"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "15"
+										},
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "paginated_response",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Create AsociacionProduccion",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_llenadora\": \"30\",\r\n    \"id_cabezal_llenadora\": \"A\",\r\n    \"id_producto\": \"TOM1\",\r\n    \"codigo_ean\": \"842000001001\",\r\n    \"ruta_etiqueta\": \"//123.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/asociacion-produccion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"asociacion-produccion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all AsociacionProduccion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/asociacion-produccion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"asociacion-produccion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one AsociacionProduccion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/asociacion-produccion/1933433E-F36B-1410-8D3D-005A248EF168",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"asociacion-produccion",
+								"1933433E-F36B-1410-8D3D-005A248EF168"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update AsociacionProduccion",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_producto\": \"TOM4\",\r\n    \"codigo_ean\": \"842000001004\"\r\n    // \"limite_llenado\": 10,\r\n    // \"ruta_etiqueta\": \"//321.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/asociacion-produccion/5030433e-f36b-1410-8ce0-00af0c2de9b7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"asociacion-produccion",
+								"5030433e-f36b-1410-8ce0-00af0c2de9b7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Rutas Etiquetas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/asociacion-produccion/rutas-etiquetas?limit=2&offset=0&paginated_response=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"asociacion-produccion",
+								"rutas-etiquetas"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "2"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "paginated_response",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Roles",
+			"item": [
+				{
+					"name": "Create Rol",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rol\": \"SUPERVISOR\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/roles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Roles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/roles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"roles"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "V2",
+					"item": [
+						{
+							"name": "Query Usuarios V2",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/usuarios/v2/query?limit=15&offset=0&paginated_response=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"usuarios",
+										"v2",
+										"query"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "15"
+										},
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "paginated_response",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Create Usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"\",\r\n    \"password\": \"\",\r\n    \"rol\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one Usuario",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios/123",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios",
+								"123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Usuario",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Usuario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"DANIEL\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Produccion",
+			"item": [
+				{
+					"name": "V2",
+					"item": [
+						{
+							"name": "Query Produccion V2",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/produccion/v2/query?limit=15&offset=0&paginated_response=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"produccion",
+										"v2",
+										"query"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "15"
+										},
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "paginated_response",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Create Produccion",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tipo_etiqueta\": 1,\r\n    \"id_llenadora\": \"01\",\r\n    \"id_cabezal_llenadora\": \"A\",\r\n    \"numero_items\": 1,\r\n    \"titulo_1\": \"hola\",\r\n    \"valor_1\": \"pump\",\r\n    \"titulo_2\": \"anddump\",\r\n    \"valor_2\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/produccion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"produccion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Manual Produccion",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiN0U2NTQzM0UtRjM2Qi0xNDEwLThDRTItMDBBRjBDMkRFOUI3Iiwibm9tYnJlIjoiYWRtaW4uYXVzZXIiLCJyb2wiOiJBRE1JTklTVFJBRE9SIiwiaWF0IjoxNzUzMDIwMTkxLCJleHAiOjE3NTMxMDY1OTF9.XI7tOJHb_MiyeV35gO9fzYrHXjoPHdMK49CIWe2GbF4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"code\": 202,\r\n\"codigo_ean\": \"8436029259280\",\r\n\"familia_producto\": \"SECADERO\",\r\n\"fecha_caducidad\": \"2026-07-21\",\r\n\"fecha_produccion\": \"2025-07-21\",\r\n\"hora_produccion\": \"16:35\",\r\n\"id_cabezal_llenadora\": \"A\",\r\n\"id_llenadora\": \"01\",\r\n\"id_producto\": \"POMACE/BIGBAG\",\r\n\"intervalo_minutos\": 1,\r\n\"no_lote\": \"252021601\",\r\n\"no_matricula\": \"132520216010000016\",\r\n\"no_bidon\": 1,\r\n\"numero_etiquetas\": 1,\r\n\"peso_bruto\": 400.53,\r\n\"peso_neto\": 380.87,\r\n\"sscc\": null,\r\n\"titulo_1\": null,\r\n\"titulo_2\": \"hola2\",\r\n\"valor_1\": null,\r\n\"valor_2\": \"jeje2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/produccion/manual",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"produccion",
+								"manual"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Produccion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/produccion?limit=15&offset=0&paginated_response=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"produccion"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "15"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "paginated_response",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one Produccion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/produccion/4e33433e-f36b-1410-8d3d-005a248ef168",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"produccion",
+								"4e33433e-f36b-1410-8d3d-005a248ef168"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Produccion",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiMzQzMzQzM0UtRjM2Qi0xNDEwLThEM0QtMDA1QTI0OEVGMTY4Iiwibm9tYnJlIjoiREFOSUVMIiwicm9sIjoiQURNSU5JU1RSQURPUiIsImlhdCI6MTc0ODg1NTUzOX0.IfvdHUFoxHjor2tEKNiQgzXPkQaGJrvl2gWxLYIgQ-o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"codigo_baja\": \"BA1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/produccion/4e33433e-f36b-1410-8d3d-005a248ef168",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"produccion",
+								"4e33433e-f36b-1410-8d3d-005a248ef168"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter Produccion",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// {\r\n//     \"id_llenadora\": \"02\",\r\n//     \"id_cabezal_llenadora\": \"A\",\r\n//     \"estado\": 1,\r\n//     \"registrado\": 0,\r\n//     \"tipo_etiqueta\": 3,\r\n//     \"fecha_desde\": \"2025-06-02\",\r\n//     \"fecha_hasta\": \"2025-07-02\",\r\n//     \"hora_desde\": \"18:35\",\r\n//     \"hora_hasta\": \"18:49\"\r\n// }\r\n{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/produccion/filter?limit=15&offset=0&paginated_response=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"produccion",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "15"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "paginated_response",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Seed",
+			"item": [
+				{
+					"name": "Execute Seed",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/seed",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"seed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Erase DB",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/seed/erase",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"seed",
+								"erase"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pesos",
+			"item": [
+				{
+					"name": "V2",
+					"item": [
+						{
+							"name": "Query Pesos V2",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"order\": {\r\n        \"id_llenadora\": \"ASC\",\r\n        \"id_cabezal_llenadora\": \"ASC\"\r\n    },\r\n    \"select\": [\"id_llenadora\", \"id_cabezal_llenadora\", \"peso_plc\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/pesos/v2/query",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"pesos",
+										"v2",
+										"query"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "15",
+											"disabled": true
+										},
+										{
+											"key": "offset",
+											"value": "0",
+											"disabled": true
+										},
+										{
+											"key": "paginated_response",
+											"value": "1",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "V3",
+					"item": [
+						{
+							"name": "New Request",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Query Pesos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_llenadora\": \"01\",\r\n    \"id_cabezal_llenadora\": \"A\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/pesos/query",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"pesos",
+								"query"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Número Bidón",
+			"item": [
+				{
+					"name": "V2",
+					"item": [
+						{
+							"name": "Query NumeroBidon V2",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"where\": {\r\n        \"anio\": {\"eq\": 2025}\r\n    },\r\n    \"order\": {\r\n        \"id_llenadora\": \"ASC\",\r\n        \"id_cabezal_llenadora\": \"ASC\"\r\n    },\r\n    \"select\": [\"id_llenadora\", \"id_cabezal_llenadora\", \"numero_bidon\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/numero-bidon/v2/query",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"numero-bidon",
+										"v2",
+										"query"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "15",
+											"disabled": true
+										},
+										{
+											"key": "offset",
+											"value": "0",
+											"disabled": true
+										},
+										{
+											"key": "paginated_response",
+											"value": "1",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Query NumeroBidon",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_llenadora\": \"02\",\r\n    \"id_cabezal_llenadora\": \"A\",\r\n    \"anio\": 2025\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/numero-bidon/query",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"numero-bidon",
+								"query"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bartender",
+			"item": [
+				{
+					"name": "doPrint",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// {\r\n//     \"RUTA_ETIQUETA\": \"\\\"C:\\\\Users\\\\danie\\\\Desktop\\\\Etiquetado\\\\Documento1.btw\\\"\",\r\n//     \"NO_LOTE\": \"123456\"\r\n// }\r\n{\r\n  \"TIPO_ETIQUETA\": \"2\",\r\n  \"NO_BIDON\": \"31\",\r\n  \"NO_MATRICULA\": \"122517009070000310\",\r\n  \"NO_LOTE\": \"251700907\",\r\n  \"SSCC\": \"123456789012345678\",\r\n  \"PRODUCTO\": \"TOM3\",\r\n  \"FAMILIA_PRODUCTO\": \"Tomate\",\r\n  \"CODIGO_EAN\": \"842000001003\",\r\n  \"FECHA_PRODUCCION\": \"2025-06-19\",\r\n  \"HORA_PRODUCCION\": \"09:05\",\r\n  \"FECHA_CADUCIDAD\": \"2026-06-19\",\r\n  \"CODE\": \"170\",\r\n  \"PESO_NETO_REAL\": \"800\",\r\n  \"PESO_NETO_ETIQUETA\": \"803\",\r\n  \"PESO_BRUTO_ETIQUETA\": \"853\",\r\n  \"TITULO_1\": \"Lote\",\r\n  \"VALOR_1\": \"251700907\",\r\n  \"TITULO_2\": \"Matricula\",\r\n  \"VALOR_2\": \"122517009070000310\",\r\n  \"RUTA_IMPRESION\": \"C:\\\\EtiquetasBartender\\\\C0001 ESTANDAR BIDON.btw\",\r\n  \"RUTA_ETIQUETA\": \"\\\"C:\\\\Users\\\\danie\\\\Desktop\\\\Etiquetado\\\\Documento1.btw\\\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:80/Integration/IntegraciónServicioweb/Execute",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"Integration",
+								"IntegraciónServicioweb",
+								"Execute"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Bartender Config",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"protocolo_api\": \"http\",\r\n    \"host\": \"localhost\",\r\n    \"puerto\": 80,\r\n    \"ruta_api\": \"Integration\",\r\n    \"nombre_integracion\": \"IntegraciónServicioweb\",\r\n    \"comando\": \"Execute\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/bartender",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"bartender"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Bartender Config",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/bartender",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"bartender"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Bartender Config",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"protocolo_api\": \"http\",\r\n    \"host\": \"localhost\",\r\n    \"puerto\": 80,\r\n    \"ruta_api\": \"Integration\",\r\n    \"nombre_integracion\": \"IntegraciónServicioweb\",\r\n    \"comando\": \"Execute\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/bartender",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"bartender"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Bartender Config",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/bartender",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"bartender"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Common",
+			"item": [
+				{
+					"name": "Heart Bit",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/common/heartbit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"common",
+								"heartbit"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

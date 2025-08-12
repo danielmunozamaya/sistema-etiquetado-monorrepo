@@ -1,0 +1,1 @@
+export const POLLING_INTERVAL_TIME_MS = 3000;
