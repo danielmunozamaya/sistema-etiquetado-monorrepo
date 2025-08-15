@@ -50,10 +50,6 @@
     "winston": "^3.17.0",
     "winston-daily-rotate-file": "^5.0.0"
   },
-  "optionalDependencies": {
-    "pm2": "^6.0.8",
-    "pm2-windows-startup": "^1.0.3"
-  },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
     "@eslint/js": "^9.18.0",
@@ -80,6 +76,9 @@
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.7.3",
     "typescript-eslint": "^8.20.0"
+  },
+  "resolutions": {
+    "tmp": ">=0.2.4"
   },
   "jest": {
     "moduleFileExtensions": [

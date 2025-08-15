@@ -131,3 +131,10 @@ Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
 - 13.- Añadir registro de configuración de bartender en la tabla de bartender_config de base de datos. Modificar estos datos si los datos de configuración de la integración de Bartender cambia en algún momento. Ejemplo en formato JSON: `{"id": "6d5f433e-f36b-1410-8ce2-00af0c2de9b7","protocolo_api":"http","host": "localhost","puerto": "80","ruta_api": "Integration","nombre_integracion": "IntegraciónServicioweb","comando": "Execute"}`
 - 14.- Lanzar integración de Bartender como servicio (se hace en el propio Bartender Integration Service)
 - 15.- Arrancar aplicación ejecutando `http://localhost:3000` en el navegador web (se puede crear un acceso directo posteriormente, además de un nombre en el DNS local)
+
+## Deployment dependencies
+* `node v22.14.0`
+* `npm 11.3.0`
+* `yarn 1.22.22`
+* `npm i -g pm2@6.0.8`
+* `npm i -g pm2-windows-startup@1.0.3`.
