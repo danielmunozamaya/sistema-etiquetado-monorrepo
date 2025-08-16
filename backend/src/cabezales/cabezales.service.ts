@@ -216,10 +216,6 @@ export class CabezalesService
     });
   }
 
-  async removeAll() {
-    await this.cabezalesRepo.deleteAll();
-  }
-
   getRepository(): Repository<Cabezales> {
     return this.cabezalesRepo;
   }

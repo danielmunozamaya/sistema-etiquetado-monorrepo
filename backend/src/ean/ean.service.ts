@@ -241,10 +241,6 @@ export class EanService
     });
   }
 
-  async removeAll() {
-    await this.eanRepo.deleteAll();
-  }
-
   getRepository(): Repository<Ean> {
     return this.eanRepo;
   }

@@ -468,10 +468,6 @@ export class LlenadorasService
     });
   }
 
-  async removeAll() {
-    await this.llenadorasRepo.deleteAll();
-  }
-
   getRepository(): Repository<Llenadoras> {
     return this.llenadorasRepo;
   }

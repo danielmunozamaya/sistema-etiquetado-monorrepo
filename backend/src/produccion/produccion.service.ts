@@ -689,10 +689,6 @@ export class ProduccionService
     return buildResponse(data, total, paginationDto);
   }
 
-  async removeAll() {
-    await this.produccionRepo.deleteAll();
-  }
-
   getRepository(): Repository<Produccion> {
     return this.produccionRepo;
   }

@@ -231,10 +231,6 @@ export class UsuariosService
     return { token };
   }
 
-  async removeAll() {
-    await this.usuariosRepo.deleteAll();
-  }
-
   getRepository(): Repository<Usuarios> {
     return this.usuariosRepo;
   }

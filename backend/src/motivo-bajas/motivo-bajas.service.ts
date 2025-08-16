@@ -153,10 +153,6 @@ export class MotivoBajasService
     });
   }
 
-  async removeAll() {
-    await this.motivoBajaRepo.deleteAll();
-  }
-
   getRepository(): Repository<MotivoBajas> {
     return this.motivoBajaRepo;
   }

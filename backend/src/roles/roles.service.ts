@@ -82,10 +82,6 @@ export class RolesService
     return rol;
   }
 
-  async removeAll() {
-    await this.rolesRepo.deleteAll();
-  }
-
   getRepository(): Repository<Roles> {
     return this.rolesRepo;
   }

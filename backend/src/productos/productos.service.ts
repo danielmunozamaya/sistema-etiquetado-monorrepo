@@ -246,10 +246,6 @@ export class ProductosService
     return buildResponse(data, total, paginationDto);
   }
 
-  async removeAll() {
-    await this.productosRepo.deleteAll();
-  }
-
   getRepository(): Repository<Productos> {
     return this.productosRepo;
   }

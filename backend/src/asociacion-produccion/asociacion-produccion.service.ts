@@ -396,10 +396,6 @@ export class AsociacionProduccionService
     return [];
   }
 
-  async removeAll() {
-    await this.asociacionRepo.deleteAll();
-  }
-
   getRepository(): Repository<AsociacionProduccion> {
     return this.asociacionRepo;
   }

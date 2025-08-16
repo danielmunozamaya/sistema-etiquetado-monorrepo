@@ -260,10 +260,6 @@ export class PesosService implements OnModuleInit, SyncableService<Pesos> {
     return data;
   }
 
-  async removeAll() {
-    await this.pesosRepo.deleteAll();
-  }
-
   getRepository(): Repository<Pesos> {
     return this.pesosRepo;
   }

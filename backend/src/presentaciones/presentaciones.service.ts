@@ -233,10 +233,6 @@ export class PresentacionesService
     });
   }
 
-  async removeAll() {
-    await this.presentacionesRepo.deleteAll();
-  }
-
   getRepository(): Repository<Presentaciones> {
     return this.presentacionesRepo;
   }
