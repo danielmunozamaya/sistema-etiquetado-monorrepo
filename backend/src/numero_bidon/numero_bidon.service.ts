@@ -16,7 +16,7 @@ import { SyncOperacion } from 'src/common/types/sync.types';
 import { ComplexQueryDto } from 'src/common/dto/complex-query.dto';
 import { PaginationDto } from 'src/common/dto/pagination.dto';
 import { ComplexQueryBuilder } from 'src/common/classes/complex-query-builder.class';
-import { buildResponse } from 'src/common/helpers/build-response';
+import { buildResponse } from 'src/common/helpers/build-response.helper';
 import { LlenadorasService } from 'src/llenadoras/llenadoras.service';
 import { SincronismoService } from 'src/sincronismo/sincronismo.service';
 import { SyncableService } from 'src/common/interfaces/syncable-service.interface';

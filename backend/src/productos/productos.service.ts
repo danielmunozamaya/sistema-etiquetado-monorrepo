@@ -20,7 +20,7 @@ import { PaginationResponse } from 'src/common/interfaces/pagination-response.in
 import { QueryProductoDto } from './dto/query-producto.dto';
 import { SyncTabla } from 'src/common/types/common.types';
 import { SyncOperacion } from 'src/common/types/sync.types';
-import { buildResponse } from 'src/common/helpers/build-response';
+import { buildResponse } from 'src/common/helpers/build-response.helper';
 import { ComplexQueryDto } from 'src/common/dto/complex-query.dto';
 import { ComplexQueryBuilder } from 'src/common/classes/complex-query-builder.class';
 import { SincronismoService } from 'src/sincronismo/sincronismo.service';

@@ -18,7 +18,7 @@ import { CreatePesosDto } from './dto/create-pesos.dto';
 import { ComplexQueryDto } from 'src/common/dto/complex-query.dto';
 import { PaginationDto } from 'src/common/dto/pagination.dto';
 import { ComplexQueryBuilder } from 'src/common/classes/complex-query-builder.class';
-import { buildResponse } from 'src/common/helpers/build-response';
+import { buildResponse } from 'src/common/helpers/build-response.helper';
 import { TipoEtiqueta } from 'src/bartender/types/tipo_etiqueta.type';
 import { SincronismoService } from 'src/sincronismo/sincronismo.service';
 import { SyncTabla } from 'src/common/types/common.types';

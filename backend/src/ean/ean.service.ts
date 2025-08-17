@@ -24,7 +24,7 @@ import { SyncTabla } from 'src/common/types/common.types';
 import { SyncOperacion } from 'src/common/types/sync.types';
 import { ComplexQueryDto } from 'src/common/dto/complex-query.dto';
 import { ComplexQueryBuilder } from 'src/common/classes/complex-query-builder.class';
-import { buildResponse } from 'src/common/helpers/build-response';
+import { buildResponse } from 'src/common/helpers/build-response.helper';
 import { SincronismoService } from 'src/sincronismo/sincronismo.service';
 import { SyncableService } from 'src/common/interfaces/syncable-service.interface';
 import { TransactionalService } from 'src/common/services/transactional.service';

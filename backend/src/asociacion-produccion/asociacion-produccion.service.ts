@@ -30,7 +30,7 @@ import { Ean } from 'src/ean/entities/ean.entity';
 import { CabezalesService } from 'src/cabezales/cabezales.service';
 import { ComplexQueryDto } from 'src/common/dto/complex-query.dto';
 import { ComplexQueryBuilder } from 'src/common/classes/complex-query-builder.class';
-import { buildResponse } from 'src/common/helpers/build-response';
+import { buildResponse } from 'src/common/helpers/build-response.helper';
 import { WebsocketsService } from 'src/websockets/websockets.service';
 import {
   HomeServiceMethod,
@@ -302,9 +302,7 @@ export class AsociacionProduccionService
       }
 
       if (dto.id_producto && !dto.codigo_ean) {
-        throw new ForbiddenException(
-          i18n.errors.actualizarSoloIdProducto()
-        );
+        throw new ForbiddenException(i18n.errors.actualizarSoloIdProducto());
       }
 
       if (dto.codigo_ean && dto.id_producto) {

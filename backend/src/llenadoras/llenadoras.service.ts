@@ -20,7 +20,7 @@ import { SyncTabla } from 'src/common/types/common.types';
 import { SyncOperacion } from 'src/common/types/sync.types';
 import { ComplexQueryDto } from 'src/common/dto/complex-query.dto';
 import { ComplexQueryBuilder } from 'src/common/classes/complex-query-builder.class';
-import { buildResponse } from 'src/common/helpers/build-response';
+import { buildResponse } from 'src/common/helpers/build-response.helper';
 import { SincronismoService } from 'src/sincronismo/sincronismo.service';
 import { SyncableService } from 'src/common/interfaces/syncable-service.interface';
 import { CabezalesService } from '../cabezales/cabezales.service';
@@ -64,9 +64,7 @@ export class LlenadorasService
         .getOne();
 
       if (existingLlenadora) {
-        throw new ConflictException(
-          i18n.errors.llenadora_yaExiste()
-        );
+        throw new ConflictException(i18n.errors.llenadora_yaExiste());
       }
 
       const llenadoraObject = repo.create(createLlenadoraDto);
@@ -152,7 +150,10 @@ export class LlenadorasService
 
         if (cabezalExistente) {
           throw new ConflictException(
-            i18n.errors.llenadora_cabezalYaExiste(cabezalDto.id_cabezal, cabezalDto.id_llenadora)
+            i18n.errors.llenadora_cabezalYaExiste(
+              cabezalDto.id_cabezal,
+              cabezalDto.id_llenadora
+            )
           );
         }
 
@@ -167,7 +168,9 @@ export class LlenadorasService
 
         if (nombreCabezalExistente) {
           throw new ConflictException(
-            i18n.errors.llenadora_nombreCabezalYaExiste(cabezalDto.nombre_cabezal)
+            i18n.errors.llenadora_nombreCabezalYaExiste(
+              cabezalDto.nombre_cabezal
+            )
           );
         }
 
@@ -211,7 +214,10 @@ export class LlenadorasService
 
         if (asociacionExistente) {
           throw new ConflictException(
-            i18n.errors.llenadora_asociacionYaExiste(createDto.id_llenadora, cabezalDto.id_cabezal)
+            i18n.errors.llenadora_asociacionYaExiste(
+              createDto.id_llenadora,
+              cabezalDto.id_cabezal
+            )
           );
         }
 
@@ -359,7 +365,9 @@ export class LlenadorasService
 
       if (llenadora.nombre_llenadora === updateLlenadoraDto.nombre_llenadora)
         throw new ConflictException(
-          i18n.errors.llenadora_nombreYaEnUso(updateLlenadoraDto.nombre_llenadora)
+          i18n.errors.llenadora_nombreYaEnUso(
+            updateLlenadoraDto.nombre_llenadora
+          )
         );
 
       const nombreEnUso = await repo.findOne({
@@ -370,7 +378,9 @@ export class LlenadorasService
 
       if (nombreEnUso && nombreEnUso.id !== llenadora.id) {
         throw new ConflictException(
-          i18n.errors.llenadora_nombreYaExiste(updateLlenadoraDto.nombre_llenadora)
+          i18n.errors.llenadora_nombreYaExiste(
+            updateLlenadoraDto.nombre_llenadora
+          )
         );
       }
 
