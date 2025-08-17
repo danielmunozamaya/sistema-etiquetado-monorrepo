@@ -20,7 +20,7 @@ import { PaginationDto } from 'src/common/dto/pagination.dto';
 import { LlenadorasService } from 'src/llenadoras/llenadoras.service';
 import { ProductosService } from 'src/productos/productos.service';
 import { EanService } from 'src/ean/ean.service';
-import { isUUID } from 'class-validator';
+import { isUUID } from 'src/common/helpers/isUUID.helper';
 import { Paginator } from 'src/common/classes/paginator.class';
 import { PaginationResponse } from 'src/common/interfaces/pagination-response.interface';
 import { SyncTabla, UserRole } from 'src/common/types/common.types';

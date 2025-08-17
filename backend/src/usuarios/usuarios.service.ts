@@ -18,7 +18,7 @@ import { UpdateUsuarioDto } from './dto/update-usuario.dto';
 import { LoginUsuarioDto } from './dto/login-usuario.dto';
 import { PaginationDto } from 'src/common/dto/pagination.dto';
 import { RolesService } from 'src/roles/roles.service';
-import { isUUID } from 'class-validator';
+import { isUUID } from 'src/common/helpers/isUUID.helper';
 import { SyncTabla } from 'src/common/types/common.types';
 import { SyncOperacion } from 'src/common/types/sync.types';
 import { ComplexQueryDto } from 'src/common/dto/complex-query.dto';
@@ -107,9 +107,9 @@ export class UsuariosService
 
     let usuario: Usuarios | null = null;
 
-    usuario = await repo.findOne({ where: { id: term } });
+    if (isUUID(term)) usuario = await repo.findOne({ where: { id: term } });
 
-    if (!usuario)
+    if (!usuario && !isUUID(term))
       usuario = await repo.findOne({ where: { nombre: term } });
 
     if (!usuario)

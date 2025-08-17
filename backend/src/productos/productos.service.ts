@@ -9,7 +9,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 
 import { DataSource, QueryRunner, Repository } from 'typeorm';
 import { i18n } from 'src/main';
-import { validate as isUUID } from 'uuid';
+import { isUUID } from 'src/common/helpers/isUUID.helper';
 
 import { Productos } from './entities/producto.entity';
 import { CreateProductoDto } from './dto/create-producto.dto';

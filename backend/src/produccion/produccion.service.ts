@@ -17,7 +17,6 @@ import { AsociacionProduccionService } from 'src/asociacion-produccion/asociacio
 // import { PresentacionesService } from 'src/presentaciones/presentaciones.service';
 // import { PesosService } from 'src/pesos/pesos.service';
 import { MotivoBajasService } from '../motivo-bajas/motivo-bajas.service';
-import { isUUID } from 'class-validator';
 import { PaginationDto } from 'src/common/dto/pagination.dto';
 import { FilterProduccionDto } from './dto/filter-produccion.dto';
 import { NumeroBidonService } from 'src/numero_bidon/numero_bidon.service';

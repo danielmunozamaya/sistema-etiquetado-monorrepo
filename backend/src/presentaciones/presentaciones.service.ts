@@ -8,7 +8,7 @@ import {
 import { InjectRepository } from '@nestjs/typeorm';
 import { DataSource, QueryRunner, Repository } from 'typeorm';
 import { i18n } from 'src/main';
-import { validate as isUUID } from 'uuid';
+import { isUUID } from 'src/common/helpers/isUUID.helper';
 
 import { Presentaciones } from './entities/presentacion.entity';
 import { CreatePresentacionDto } from './dto/create-presentacion.dto';

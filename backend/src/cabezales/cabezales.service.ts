@@ -8,7 +8,7 @@ import {
 import { InjectRepository } from '@nestjs/typeorm';
 import { DataSource, QueryRunner, Repository } from 'typeorm';
 import { i18n } from 'src/main';
-import { validate as isUUID } from 'uuid';
+import { isUUID } from 'src/common/helpers/isUUID.helper';
 
 import { Cabezales } from './entities/cabezal.entity';
 import { CreateCabezalDto } from 'src/cabezales/dto/create-cabezales.dto';
