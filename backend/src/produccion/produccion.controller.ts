@@ -1,11 +1,11 @@
 import {
   Controller,
-  Get,
+  // Get,
   Post,
   Body,
   Patch,
   Param,
-  Delete,
+  // Delete,
   UseGuards,
   Query,
   Req,
@@ -18,7 +18,7 @@ import { JwtAuthGuard } from 'src/common/guards/jwt-auth.guard';
 import { UserExistsGuard } from 'src/common/guards/user-exists.guard';
 import { PaginationDto } from 'src/common/dto/pagination.dto';
 import { FilterProduccionDto } from './dto/filter-produccion.dto';
-import { ComplexQueryDto } from 'src/common/dto/complex-query.dto';
+// import { ComplexQueryDto } from 'src/common/dto/complex-query.dto';
 import { CreateManualProduccionDto } from './dto/create-manual-produccion.dto';
 import { UserJWT } from 'src/common/types/auth.types';
 
@@ -52,17 +52,17 @@ export class ProduccionController {
     );
   }
 
-  @UseGuards(JwtAuthGuard, UserExistsGuard)
-  @Get()
-  findAll(@Query() paginationDto: PaginationDto) {
-    return this.produccionsService.findAll(paginationDto);
-  }
+  // @UseGuards(JwtAuthGuard, UserExistsGuard)
+  // @Get()
+  // findAll(@Query() paginationDto: PaginationDto) {
+  //   return this.produccionsService.findAll(paginationDto);
+  // }
 
-  @UseGuards(JwtAuthGuard, UserExistsGuard)
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.produccionsService.findOne(id);
-  }
+  // @UseGuards(JwtAuthGuard, UserExistsGuard)
+  // @Get(':id')
+  // findOne(@Param('id') id: string) {
+  //   return this.produccionsService.findOne(id);
+  // }
 
   @UseGuards(JwtAuthGuard, UserExistsGuard)
   @Patch(':id')
@@ -87,17 +87,17 @@ export class ProduccionController {
     return this.produccionsService.filter(dto, paginationDto);
   }
 
-  @UseGuards(JwtAuthGuard, UserExistsGuard)
-  @Post('v2/query')
-  queryProduccionV2(
-    @Body() complexQueryDto: ComplexQueryDto,
-    @Query() paginationDto: PaginationDto
-  ) {
-    return this.produccionsService.queryProduccionV2(
-      complexQueryDto,
-      paginationDto
-    );
-  }
+  // @UseGuards(JwtAuthGuard, UserExistsGuard)
+  // @Post('v2/query')
+  // queryProduccionV2(
+  //   @Body() complexQueryDto: ComplexQueryDto,
+  //   @Query() paginationDto: PaginationDto
+  // ) {
+  //   return this.produccionsService.queryProduccionV2(
+  //     complexQueryDto,
+  //     paginationDto
+  //   );
+  // }
 
   // @Delete(':id')
   // remove(@Param('id') id: string) {

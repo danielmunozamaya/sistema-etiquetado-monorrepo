@@ -3,17 +3,17 @@ import {
   Get,
   Post,
   Body,
-  Patch,
+  // Patch,
   Param,
   Delete,
   Query,
-  ParseUUIDPipe,
+  // ParseUUIDPipe,
   UseGuards,
 } from '@nestjs/common';
 
 import { LlenadorasService } from './llenadoras.service';
-import { CreateLlenadoraDto } from './dto/create-llenadora.dto';
-import { UpdateLlenadoraDto } from './dto/update-llenadora.dto';
+// import { CreateLlenadoraDto } from './dto/create-llenadora.dto';
+// import { UpdateLlenadoraDto } from './dto/update-llenadora.dto';
 import { PaginationDto } from 'src/common/dto/pagination.dto';
 import { ComplexQueryDto } from 'src/common/dto/complex-query.dto';
 import { CreateLlenadoraCabezalesAndAsociacionesDTO } from './dto/create-all.dto';
@@ -27,12 +27,12 @@ import { UserRole } from 'src/common/types/common.types';
 export class LlenadorasController {
   constructor(private readonly llenadorasService: LlenadorasService) {}
 
-  @UseGuards(JwtAuthGuard, UserExistsGuard, RoleGuard)
-  @Roles(UserRole.ADMIN)
-  @Post()
-  create(@Body() createLlenadoraDto: CreateLlenadoraDto) {
-    return this.llenadorasService.createWithTransaction(createLlenadoraDto);
-  }
+  // @UseGuards(JwtAuthGuard, UserExistsGuard, RoleGuard)
+  // @Roles(UserRole.ADMIN)
+  // @Post()
+  // create(@Body() createLlenadoraDto: CreateLlenadoraDto) {
+  //   return this.llenadorasService.createWithTransaction(createLlenadoraDto);
+  // }
 
   @UseGuards(JwtAuthGuard, UserExistsGuard, RoleGuard)
   @Roles(UserRole.ADMIN)
@@ -52,17 +52,17 @@ export class LlenadorasController {
     return this.llenadorasService.findAll(paginationDto);
   }
 
-  @UseGuards(JwtAuthGuard, UserExistsGuard)
-  @Get('slim')
-  findAllSlim(@Query() paginationDto: PaginationDto) {
-    return this.llenadorasService.findAllSlim(paginationDto);
-  }
+  // @UseGuards(JwtAuthGuard, UserExistsGuard)
+  // @Get('slim')
+  // findAllSlim(@Query() paginationDto: PaginationDto) {
+  //   return this.llenadorasService.findAllSlim(paginationDto);
+  // }
 
-  @UseGuards(JwtAuthGuard, UserExistsGuard)
-  @Get(':term')
-  findOne(@Param('term') term: string) {
-    return this.llenadorasService.findOne(term);
-  }
+  // @UseGuards(JwtAuthGuard, UserExistsGuard)
+  // @Get(':term')
+  // findOne(@Param('term') term: string) {
+  //   return this.llenadorasService.findOne(term);
+  // }
 
   @UseGuards(JwtAuthGuard, UserExistsGuard)
   @Post('v2/query')
@@ -76,15 +76,15 @@ export class LlenadorasController {
     );
   }
 
-  @UseGuards(JwtAuthGuard, UserExistsGuard, RoleGuard)
-  @Roles(UserRole.ADMIN)
-  @Patch(':id')
-  update(
-    @Param('id', ParseUUIDPipe) id: string,
-    @Body() updateLlenadoraDto: UpdateLlenadoraDto
-  ) {
-    return this.llenadorasService.updateWithTransaction(id, updateLlenadoraDto);
-  }
+  // @UseGuards(JwtAuthGuard, UserExistsGuard, RoleGuard)
+  // @Roles(UserRole.ADMIN)
+  // @Patch(':id')
+  // update(
+  //   @Param('id', ParseUUIDPipe) id: string,
+  //   @Body() updateLlenadoraDto: UpdateLlenadoraDto
+  // ) {
+  //   return this.llenadorasService.updateWithTransaction(id, updateLlenadoraDto);
+  // }
 
   @UseGuards(JwtAuthGuard, UserExistsGuard, RoleGuard)
   @Roles(UserRole.ADMIN)

@@ -3,7 +3,7 @@ import {
   Get,
   Post,
   Body,
-  Patch,
+  // Patch,
   Param,
   Delete,
   Query,
@@ -13,7 +13,7 @@ import {
 
 import { ProductosService } from './productos.service';
 import { CreateProductoDto } from './dto/create-producto.dto';
-import { UpdateProductoDto } from './dto/update-producto.dto';
+// import { UpdateProductoDto } from './dto/update-producto.dto';
 import { PaginationDto } from 'src/common/dto/pagination.dto';
 import { QueryProductoDto } from './dto/query-producto.dto';
 import { ComplexQueryDto } from 'src/common/dto/complex-query.dto';
@@ -34,11 +34,11 @@ export class ProductosController {
     return this.productosService.createWithTransaction(dto);
   }
 
-  @UseGuards(JwtAuthGuard, UserExistsGuard)
-  @Get()
-  findAll(@Query() paginationDto: PaginationDto) {
-    return this.productosService.findAll(paginationDto);
-  }
+  // @UseGuards(JwtAuthGuard, UserExistsGuard)
+  // @Get()
+  // findAll(@Query() paginationDto: PaginationDto) {
+  //   return this.productosService.findAll(paginationDto);
+  // }
 
   @UseGuards(JwtAuthGuard, UserExistsGuard)
   @Get('familias')
@@ -46,17 +46,17 @@ export class ProductosController {
     return this.productosService.findAllFamilias(paginationDto);
   }
 
-  @UseGuards(JwtAuthGuard, UserExistsGuard)
-  @Get('familia/:familia')
-  getByFamilia(@Param('familia') familia: string) {
-    return this.productosService.findByFamilia(familia);
-  }
+  // @UseGuards(JwtAuthGuard, UserExistsGuard)
+  // @Get('familia/:familia')
+  // getByFamilia(@Param('familia') familia: string) {
+  //   return this.productosService.findByFamilia(familia);
+  // }
 
-  @UseGuards(JwtAuthGuard, UserExistsGuard)
-  @Get(':term')
-  findOne(@Param('term') term: string) {
-    return this.productosService.findOne(term);
-  }
+  // @UseGuards(JwtAuthGuard, UserExistsGuard)
+  // @Get(':term')
+  // findOne(@Param('term') term: string) {
+  //   return this.productosService.findOne(term);
+  // }
 
   @UseGuards(JwtAuthGuard, UserExistsGuard)
   @Post('query')
@@ -79,15 +79,15 @@ export class ProductosController {
     );
   }
 
-  @UseGuards(JwtAuthGuard, UserExistsGuard, RoleGuard)
-  @Roles(UserRole.ADMIN)
-  @Patch(':id')
-  update(
-    @Param('id', ParseUUIDPipe) id: string,
-    @Body() dto: UpdateProductoDto
-  ) {
-    return this.productosService.updateWithTransaction(id, dto);
-  }
+  // @UseGuards(JwtAuthGuard, UserExistsGuard, RoleGuard)
+  // @Roles(UserRole.ADMIN)
+  // @Patch(':id')
+  // update(
+  //   @Param('id', ParseUUIDPipe) id: string,
+  //   @Body() dto: UpdateProductoDto
+  // ) {
+  //   return this.productosService.updateWithTransaction(id, dto);
+  // }
 
   @UseGuards(JwtAuthGuard, UserExistsGuard, RoleGuard)
   @Roles(UserRole.ADMIN)

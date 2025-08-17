@@ -1,9 +1,9 @@
 import {
   Controller,
-  Get,
+  // Get,
   Post,
   Body,
-  Patch,
+  // Patch,
   Param,
   Delete,
   Query,
@@ -13,7 +13,7 @@ import {
 
 import { EanService } from './ean.service';
 import { CreateEanDto } from './dto/create-ean.dto';
-import { UpdateEanDto } from './dto/update-ean.dto';
+// import { UpdateEanDto } from './dto/update-ean.dto';
 import { PaginationDto } from 'src/common/dto/pagination.dto';
 import { QueryEanDto } from './dto/query-ean.dto';
 import { ComplexQueryDto } from 'src/common/dto/complex-query.dto';
@@ -34,17 +34,17 @@ export class EanController {
     return this.eanService.createWithTransaction(dto);
   }
 
-  @UseGuards(JwtAuthGuard, UserExistsGuard)
-  @Get()
-  findAll(@Query() paginationDto: PaginationDto) {
-    return this.eanService.findAll(paginationDto);
-  }
+  // @UseGuards(JwtAuthGuard, UserExistsGuard)
+  // @Get()
+  // findAll(@Query() paginationDto: PaginationDto) {
+  //   return this.eanService.findAll(paginationDto);
+  // }
 
-  @UseGuards(JwtAuthGuard, UserExistsGuard)
-  @Get(':term')
-  findOne(@Param('term') term: string) {
-    return this.eanService.findOne(term);
-  }
+  // @UseGuards(JwtAuthGuard, UserExistsGuard)
+  // @Get(':term')
+  // findOne(@Param('term') term: string) {
+  //   return this.eanService.findOne(term);
+  // }
 
   @UseGuards(JwtAuthGuard, UserExistsGuard)
   @Post('query')
@@ -61,12 +61,12 @@ export class EanController {
     return this.eanService.queryEansV2(complexQueryDto, paginationDto);
   }
 
-  @UseGuards(JwtAuthGuard, UserExistsGuard, RoleGuard)
-  @Roles(UserRole.ADMIN)
-  @Patch(':id')
-  update(@Param('id', ParseUUIDPipe) id: string, @Body() dto: UpdateEanDto) {
-    return this.eanService.updateWithTransaction(id, dto);
-  }
+  // @UseGuards(JwtAuthGuard, UserExistsGuard, RoleGuard)
+  // @Roles(UserRole.ADMIN)
+  // @Patch(':id')
+  // update(@Param('id', ParseUUIDPipe) id: string, @Body() dto: UpdateEanDto) {
+  //   return this.eanService.updateWithTransaction(id, dto);
+  // }
 
   @UseGuards(JwtAuthGuard, UserExistsGuard, RoleGuard)
   @Roles(UserRole.ADMIN)

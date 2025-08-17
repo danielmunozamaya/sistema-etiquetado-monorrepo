@@ -1,9 +1,9 @@
 import {
   Controller,
-  Get,
+  // Get,
   Post,
   Body,
-  Patch,
+  // Patch,
   Param,
   Delete,
   Query,
@@ -13,7 +13,7 @@ import {
 
 import { PresentacionesService } from './presentaciones.service';
 import { CreatePresentacionDto } from './dto/create-presentacion.dto';
-import { UpdatePresentacionDto } from './dto/update-presentacion.dto';
+// import { UpdatePresentacionDto } from './dto/update-presentacion.dto';
 import { PaginationDto } from 'src/common/dto/pagination.dto';
 import { QueryPresentacionDto } from './dto/query-presentacion.dto';
 import { ComplexQueryDto } from 'src/common/dto/complex-query.dto';
@@ -34,17 +34,17 @@ export class PresentacionesController {
     return this.presentacionesService.createWithTransaction(dto);
   }
 
-  @UseGuards(JwtAuthGuard, UserExistsGuard)
-  @Get()
-  findAll(@Query() paginationDto: PaginationDto) {
-    return this.presentacionesService.findAll(paginationDto);
-  }
+  // @UseGuards(JwtAuthGuard, UserExistsGuard)
+  // @Get()
+  // findAll(@Query() paginationDto: PaginationDto) {
+  //   return this.presentacionesService.findAll(paginationDto);
+  // }
 
-  @UseGuards(JwtAuthGuard, UserExistsGuard)
-  @Get(':term')
-  findOne(@Param('term') term: string) {
-    return this.presentacionesService.findOne(term);
-  }
+  // @UseGuards(JwtAuthGuard, UserExistsGuard)
+  // @Get(':term')
+  // findOne(@Param('term') term: string) {
+  //   return this.presentacionesService.findOne(term);
+  // }
 
   @UseGuards(JwtAuthGuard, UserExistsGuard)
   @Post('query')
@@ -67,15 +67,15 @@ export class PresentacionesController {
     );
   }
 
-  @UseGuards(JwtAuthGuard, UserExistsGuard, RoleGuard)
-  @Roles(UserRole.ADMIN)
-  @Patch(':id')
-  update(
-    @Param('id', ParseUUIDPipe) id: string,
-    @Body() dto: UpdatePresentacionDto
-  ) {
-    return this.presentacionesService.updateWithTransaction(id, dto);
-  }
+  // @UseGuards(JwtAuthGuard, UserExistsGuard, RoleGuard)
+  // @Roles(UserRole.ADMIN)
+  // @Patch(':id')
+  // update(
+  //   @Param('id', ParseUUIDPipe) id: string,
+  //   @Body() dto: UpdatePresentacionDto
+  // ) {
+  //   return this.presentacionesService.updateWithTransaction(id, dto);
+  // }
 
   @UseGuards(JwtAuthGuard, UserExistsGuard, RoleGuard)
   @Roles(UserRole.ADMIN)
