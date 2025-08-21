@@ -1,0 +1,94 @@
+.produccion-container {
+  width: 100%;
+  /* padding: 16px; */
+  box-sizing: border-box;
+}
+
+/* Modal columnas */
+.modal-body .form-check-label {
+  width: 200px;
+  font-weight: 400;
+}
+
+.filtros-form-columna {
+  padding: 0 20px;
+}
+
+.form-group-llenadora {
+  padding-bottom: 13px;
+}
+
+.form-group-llenadora label {
+  width: 100%;
+}
+
+.form-group-cabezal {
+  padding-bottom: 13px;
+}
+
+.form-group-cabezal label {
+  width: 100%;
+}
+
+.form-group-selects-baja-registrado {
+  padding-bottom: 13px;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.select-baja,
+.select-registrado {
+  width: 47%;
+}
+
+.form-group-tipo-etiqueta {
+  padding-bottom: 13px;
+}
+
+.form-group-tipo-etiqueta label {
+  width: 100%;
+}
+
+.form-group-fechas {
+  padding-bottom: 13px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-group-horas {
+  padding-bottom: 13px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.fecha-hora-form-group {
+  width: 47%;
+}
+
+.fecha-hora-form-group label {
+  width: 100%;
+}
+
+.form-check-input:checked {
+  background-color: #ffc107 !important;
+  border-color: #ffc107 !important;
+}
+
+.filtros-form-columna input[type="date"],
+.filtros-form-columna input.hora-input {
+  text-align: left;
+}
+
+.filtros-form-columna input.hora-input {
+  font-size: 0.85rem;
+}
+
+input.hora-input::placeholder {
+  color: var(--bs-body-color);
+  /* font-style: italic; */
+}
+
+.modal-dar-de-baja {
+  padding-bottom: 40px;
+}

@@ -1,0 +1,28 @@
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #f8f9fa; */
+}
+
+.auth-form {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  margin-top: 40px;
+}
+
+.login-form-group {
+  padding: 7px 0;
+}
+
+.login-user {
+  padding-top: 20px;
+}
+
+.login-pass {
+  padding-bottom: 32px;
+}

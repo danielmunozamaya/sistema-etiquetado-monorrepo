@@ -1,0 +1,156 @@
+/* Main container styles */
+.C-LT1-main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  gap: 3.5px;
+  color: #212529;
+  font-weight: 500;
+}
+
+/* Common row styles */
+.C-LT1-row {
+  border-radius: 4px;
+  padding: 4px;
+  background-color: #f8f9fa;
+}
+
+/* Row heights */
+.C-LT1-row-1,
+.C-LT1-row-2,
+.C-LT1-row-4-5-6 {
+  height: 10%;
+}
+
+.C-LT1-row-3 {
+  height: 36%;
+}
+
+.C-LT1-row-7 {
+  height: 4%;
+}
+
+/* Row 1 styles */
+.C-LT1-row-1 {
+  /* flex: 0 0 auto; */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #ff784f;
+}
+
+/* Row 2 styles */
+.C-LT1-row-2 {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  position: relative;
+}
+
+.C-LT1-row-2-col-1 {
+  width: 33.33%;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.C-LT1-row-2-col-2-3 {
+  position: absolute;
+  flex-grow: 1;
+  left: 33.33%;
+  width: 66.66%;
+  font-weight: 400;
+  text-align: center;
+}
+
+/* Row 3 styles */
+.C-LT1-row-3 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.C-LT1-row-3-virtual-column {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.C-LT1-row-3-triple-block {
+  width: 70%;
+  max-width: 200px;
+  padding: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.C-LT1-row-3-triple-subrow {
+  flex: 1;
+  background-color: #ffc107;
+  padding: 4px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Row 4, 5 and 6 styles */
+.C-LT1-row-4-5-6 {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 8px;
+}
+
+.C-LT1-row-4-5-6-triple-virtual-col {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 2px 6px;
+  gap: 8px;
+}
+
+.C-LT1-row-4-5-6-triple-virtual-col-izq {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.C-LT1-row-4-5-6-vertical-divider {
+  width: 2px;
+  height: 109%;
+  margin: 0 8px;
+}
+
+.C-LT1-row-4-5-6-triple-virtual-col-der {
+  display: block;
+  text-align: center;
+  flex: 3;
+  padding: 2px 4px;
+  max-width: 280px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 400;
+}
+
+/* Row 7 styles */
+.C-LT1-row-7 {
+  flex: 0 0 auto;
+  height: 4%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.C-LT1-row-7-col {
+  width: 33%;
+  height: 5px;
+  border-radius: 4px;
+}

@@ -1,0 +1,20 @@
+.paginado span {
+  font-size: 0.9rem;
+}
+
+.no-select {
+  user-select: none;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+.page-input {
+  text-align: center;
+  padding: 0;
+  margin: 0 2px;
+  font-size: 0.875rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: width 0.2s ease;
+}

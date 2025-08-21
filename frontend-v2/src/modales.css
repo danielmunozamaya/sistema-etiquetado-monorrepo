@@ -1,0 +1,24 @@
+.modal-unificado .modal-dialog {
+  max-width: 525px;
+  margin: auto;
+}
+
+.modal-unificado .modal-content {
+  max-height: 725px;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-unificado .modal-header,
+.modal-unificado .modal-footer {
+  flex-shrink: 0;
+}
+
+.modal-unificado .modal-body {
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.C-CM1-form-group {
+  padding: 14px 0;
+}

@@ -1,0 +1,99 @@
+/* Main container styles */
+.C-LC1-main {
+  height: 100%;
+  width: 100%;
+  /* max-width: 410px; */
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* Common row styles */
+.C-LC1-row {
+  padding: 5px;
+  border-radius: 4px;
+}
+
+/* Row 1 styles */
+.C-LC1-row-1 {
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+}
+
+/* Row 1 custom title styles */
+.C-LC1-row-1-ETSEM-style {
+  background-color: #f9b9c3;
+}
+
+.C-LC1-row-1-ETMAN-style {
+  background-color: #55828b;
+  color: white;
+}
+
+/* Common row form styles */
+.C-LC1-row-form {
+  height: 14%;
+  display: flex;
+  align-items: center;
+  background-color: #f8f9fa;
+}
+
+/* Common row form label styles */
+.C-LC1-row-form-label {
+  min-width: 100px;
+  display: flex;
+  justify-content: center;
+  padding: 0 8px;
+  font-weight: 500;
+}
+
+/* Common row form vertical divider styles */
+.C-LC1-form-vertical-divider {
+  width: 3px;
+  margin: 0 8px;
+  height: 70%;
+  background-color: var(--bs-body-color);
+}
+
+/* Common row form input styles */
+.C-LC1-form-input {
+  width: 100%;
+  display: block;
+  font-weight: 400;
+  text-align: center;
+  padding: 0 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Row 4 form select styles */
+.C-LC1-form-select-row-4 {
+  text-indent: 28px;
+  text-align: center;
+}
+
+/* Row 5 form input styles */
+.C-LC1-form-input-row-5 {
+  text-align: center;
+  text-indent: 15px;
+}
+
+/* Row 7 styles */
+.C-LC1-row-7 {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.C-LC1-row-7-button {
+  width: 49.3%;
+}
+
+.C-LC1-row-7-button button {
+  width: 100%;
+}
