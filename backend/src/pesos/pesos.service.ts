@@ -47,10 +47,14 @@ export class PesosService implements OnModuleInit, SyncableService<Pesos> {
   ) {}
 
   onModuleInit() {
-    setInterval(
-      () => this.pollingPesosProduccionAutomatica(),
-      POLLING_INTERVAL_TIME_MS
-    );
+    const runPolling = async () => {
+      try {
+        await this.pollingPesosProduccionAutomatica();
+      } finally {
+        setTimeout(runPolling, POLLING_INTERVAL_TIME_MS);
+      }
+    };
+    runPolling();
   }
 
   async create(dto: CreatePesosDto) {
@@ -75,87 +79,96 @@ export class PesosService implements OnModuleInit, SyncableService<Pesos> {
   }
 
   async processPesos(pesos: Pesos[]) {
+    // Ya no es necesaria esta bandera porque se cambió el Interval del OnInit por un Timeout, pero la dejamos por seguridad
     this.processingPesos = true;
-    for (const p of pesos) {
-      const queryRunner = this.dataSource.createQueryRunner();
-      await queryRunner.connect();
-      await queryRunner.startTransaction();
-      try {
-        const adjustedPeso = p.peso_plc / 10; // Se ajusta debido a que las llenadoras envían un entero con un sólo dígito de precisión decimal
+    try {
+      for (const p of pesos) {
+        const queryRunner = this.dataSource.createQueryRunner();
+        await queryRunner.connect();
+        await queryRunner.startTransaction();
+        try {
+          const adjustedPeso = p.peso_plc / 10; // Se ajusta debido a que las llenadoras envían un entero con un sólo dígito de precisión decimal
 
-        const dto = {
-          tipo_etiqueta: TipoEtiqueta.AUTOMATICA,
-          id_llenadora: p.id_llenadora,
-          id_cabezal_llenadora: p.id_cabezal_llenadora,
-          peso_neto_real: adjustedPeso,
-        };
+          const dto = {
+            tipo_etiqueta: TipoEtiqueta.AUTOMATICA,
+            id_llenadora: p.id_llenadora,
+            id_cabezal_llenadora: p.id_cabezal_llenadora,
+            peso_neto_real: adjustedPeso,
+          };
 
-        await this.sincronismoService.localSyncTableAppendTransaction(
-          queryRunner,
-          SyncTabla.PESOS,
-          SyncOperacion.CREATE,
-          p,
-          this.pesosRepo.target
-        );
+          await this.sincronismoService.localSyncTableAppendTransaction(
+            queryRunner,
+            SyncTabla.PESOS,
+            SyncOperacion.CREATE,
+            p,
+            this.pesosRepo.target
+          );
 
-        const produccionRegister = await this.produccionService.create(
-          dto,
-          queryRunner
-        );
+          const produccionRegister = await this.produccionService.create(
+            dto,
+            queryRunner
+          );
 
-        p.peso_plc = adjustedPeso;
-        p.orden_impresion = 0;
-        p.fecha_registro = new Date();
-        p.registro_produccion = produccionRegister[0].id;
+          p.peso_plc = adjustedPeso;
+          p.orden_impresion = 0;
+          p.fecha_registro = new Date();
+          p.registro_produccion = produccionRegister[0].id;
 
-        const pesoUpdated = await queryRunner.manager.save(Pesos, p);
+          const pesoUpdated = await queryRunner.manager.save(Pesos, p);
 
-        await this.sincronismoService.localSyncTableAppendTransaction(
-          queryRunner,
-          SyncTabla.PESOS,
-          SyncOperacion.UPDATE,
-          pesoUpdated,
-          this.pesosRepo.target
-        );
+          await this.sincronismoService.localSyncTableAppendTransaction(
+            queryRunner,
+            SyncTabla.PESOS,
+            SyncOperacion.UPDATE,
+            pesoUpdated,
+            this.pesosRepo.target
+          );
 
-        await queryRunner.commitTransaction();
-        this.logger.debug(`✅ Registro de peso procesado: ${p.id}`);
-        this.bartenderService.doPrint(
-          produccionRegister,
-          TipoEtiqueta.AUTOMATICA
-        );
-        await this.produccionService.emitEvents();
-      } catch (error) {
-        await queryRunner.rollbackTransaction();
-        this.logger.error(`❌ Error procesando peso ${p.id}: ${error.message}`);
-      } finally {
-        await queryRunner.release();
-        this.processingPesos = false;
+          await queryRunner.commitTransaction();
+          this.logger.debug(`✅ Registro de peso procesado: ${p.id}`);
+          this.bartenderService.doPrint(
+            produccionRegister,
+            TipoEtiqueta.AUTOMATICA
+          );
+          await this.produccionService.emitEvents();
+        } catch (error) {
+          await queryRunner.rollbackTransaction();
+          this.logger.error(
+            `❌ Error procesando peso ${p.id}: ${error.message}`
+          );
+        } finally {
+          await queryRunner.release();
+        }
       }
+    } finally {
+      this.processingPesos = false;
     }
-    this.processingPesos = false;
   }
 
   async removePesos(pesos: Pesos[]) {
     this.processingPesos = true;
-    for (const p of pesos) {
-      const queryRunner = this.dataSource.createQueryRunner();
-      await queryRunner.connect();
-      await queryRunner.startTransaction();
-      try {
-        await queryRunner.manager.remove(Pesos, p);
+    try {
+      for (const p of pesos) {
+        const queryRunner = this.dataSource.createQueryRunner();
+        await queryRunner.connect();
+        await queryRunner.startTransaction();
+        try {
+          await queryRunner.manager.remove(Pesos, p);
 
-        await queryRunner.commitTransaction();
-        this.logger.debug(`🗑️ Peso eliminado: ${p.id}`);
-      } catch (error) {
-        await queryRunner.rollbackTransaction();
-        this.logger.error(`❌ Error eliminando peso ${p.id}: ${error.message}`);
-      } finally {
-        await queryRunner.release();
-        this.processingPesos = false;
+          await queryRunner.commitTransaction();
+          this.logger.debug(`🗑️ Peso eliminado: ${p.id}`);
+        } catch (error) {
+          await queryRunner.rollbackTransaction();
+          this.logger.error(
+            `❌ Error eliminando peso ${p.id}: ${error.message}`
+          );
+        } finally {
+          await queryRunner.release();
+        }
       }
+    } finally {
+      this.processingPesos = false;
     }
-    this.processingPesos = false;
   }
 
   async createProduccionAutomaticaByPollingPesos() {
